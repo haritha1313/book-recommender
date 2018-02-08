@@ -15,11 +15,11 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-n", "--name", required = True, help = "Name of book you enjoyed")
 args = vars(ap.parse_args())
 
-books = pd.read_csv('BX-Books.csv', sep=';', error_bad_lines = False, encoding = 'latin-1', warn_bad_lines=False)
+books = pd.read_csv('../data/BX-Books.csv', sep=';', error_bad_lines = False, encoding = 'latin-1', warn_bad_lines=False)
 books.columns = ['ISBN', 'bookTitle', 'bookAuthor', 'yearOfPublication', 'publisher', 'imageUrlS', 'imageUrlM', 'imageUrlL']
-users = pd.read_csv('BX-Users.csv', sep=';', error_bad_lines = False, encoding = 'latin-1', warn_bad_lines=False)
+users = pd.read_csv('../data/BX-Users.csv', sep=';', error_bad_lines = False, encoding = 'latin-1', warn_bad_lines=False)
 users.columns = ['userID', 'Location', 'Age']
-ratings = pd.read_csv('BX-Book-Ratings.csv', sep = ';', error_bad_lines = False, encoding = 'latin-1', warn_bad_lines=False)
+ratings = pd.read_csv('../data/BX-Book-Ratings.csv', sep = ';', error_bad_lines = False, encoding = 'latin-1', warn_bad_lines=False)
 ratings.columns = ['userID', 'ISBN', 'bookRating']
 
 isbn = books[books['bookTitle'] == args['name']]['ISBN'].to_string(index=False)
