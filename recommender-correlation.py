@@ -23,7 +23,7 @@ ratings = pd.read_csv('../data/BX-Book-Ratings.csv', sep = ';', error_bad_lines 
 ratings.columns = ['userID', 'ISBN', 'bookRating']
 
 isbn = books[books['bookTitle'] == args['name']]['ISBN'].to_string(index=False)
-print("Wondering what you would enjoy...")
+print("\nWondering what you would enjoy...")
 """
 #Analyzing ratings
 print(ratings.shape)
